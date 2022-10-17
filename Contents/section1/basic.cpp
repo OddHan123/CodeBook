@@ -1,8 +1,9 @@
-// c++ code
 #include <bits/stdc++.h>
 using namespace std;
+#define ll long long
 
 int main() {
-    // test comment
-    cout << "test string\n";
+    
+    cout<<"for define \n";
+    return 0;
 }
