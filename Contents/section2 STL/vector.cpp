@@ -6,7 +6,7 @@ int main(){
 	v.push_back(x); //在最尾端新增一個元素
 	v.clear();  //清空整個vector
 	v.empty();  //true代表v是空的
-	v.size();  //v的大小
+	v.size();  //v的大小,0代表空
 	reverse(v.begin(),v.end());  //reverse v
 	
 	//較少用
