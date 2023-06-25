@@ -31,7 +31,7 @@ bool Union(int a, int b){
     return true;
 }
 
-void kruskal(){
+int kruskal(){
     for(int i=0; i<N; i++){
         G[i].clear();
         par[i] = i;
@@ -60,5 +60,5 @@ void kruskal(){
         if(mst==N-1)
             break;
     }
-    printf("%d\n",tot-cost);
+    return cost;
 }
