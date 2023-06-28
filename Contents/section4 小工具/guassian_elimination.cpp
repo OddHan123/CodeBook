@@ -17,7 +17,8 @@ int guassian_elimination(int m, int n){
 					swap(A[r][k],A[i][k]);
 			}
 			for(u=i+1; u<m; u++){
-				if(A[u][j]){//需要減時，該row才減第一個row
+//需要減時，該row才減第一個row
+				if(A[u][j]){
 					for(k=0; k<n; k++)
 						A[u][k]^=A[i][k];
 				}

@@ -1,7 +1,8 @@
 #define N 105
 int path[N],adj[N][N];
 
-memset(adj,0,sizeof(adj));//建雙向邊
+memset(adj,0,sizeof(adj));
+//建雙向邊
 for(int i=0,u,v,w; i<c; i++){
     scanf("%d %d %d",&u,&v,&w);
     adj[u][v] += w;
@@ -15,7 +16,8 @@ while(true){
 
     path[s] = s;
     Q.push(s);
-    while(!Q.empty() && !path[t]){//BFS找路徑
+//BFS找路徑
+    while(!Q.empty() && !path[t]){
         int now = Q.front();
         Q.pop();
         for(int i=1; i<=n; i++){
@@ -25,16 +27,16 @@ while(true){
             }
         }
     }
-
-    if(!path[t])//完全沒有路到t就break
+//完全沒有路到t就break
+    if(!path[t])
         break;
     int min_flow = 1e9;
-
-    for(int from=path[t],to=t; from!=to; from=path[to=from]){//找最窄的路
+//找最窄的路
+    for(int from=path[t],to=t; from!=to; from=path[to=from]){
         min_flow = min(min_flow,adj[from][to]);
     }
-
-    for(int from=path[t],to=t; from!=to; from=path[to=from]){//更新該路徑所有邊的額度
+//更新該路徑所有邊的額度
+    for(int from=path[t],to=t; from!=to; from=path[to=from]){
         adj[from][to] -= min_flow;
         adj[to][from] += min_flow;
     }
