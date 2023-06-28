@@ -25,7 +25,7 @@ bool SPFA(){
             if(dis[v]>dis[u]+w){
                 dis[v] = dis[u] + w;
                 if(!inq[v]){
-                    if(++cnt[v]>=n)
+                    if(++cnt[v]>=n)//如果鬆弛超過n次，代表有負環
                         return true;
                     inq[v] = true;
                     Q.push(v);
